@@ -67,10 +67,12 @@ if ($result && $result->num_rows > 0) {
             <div class="mb-3">
     <div class="form-label"></div>
     <?php if (!empty($news['image'])): ?>
-      <img src="<?= htmlspecialchars($news['image']) ?>" alt="old"
+      <img src="<?= htmlspecialchars($news['image'], ENT_QUOTES) ?>" alt="old"
            width="120" height="85" style="object-fit:cover;border-radius:6px">
     <?php else: ?>
     <?php endif; ?>
+    <input type="hidden" name="current_image"
+         value="<?= htmlspecialchars($news['image'] ?? '', ENT_QUOTES) ?>">
   </div>
   <div class="mb-3">
     <label class="form-label">new image(optional)</label>
