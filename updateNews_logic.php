@@ -19,8 +19,7 @@ if($connection->error==false){
         $imagePath = 'uploads/'.$name;
   }
   $sql = "UPDATE news SET `title`='$title',`categoryName`='$category',
-            `details`='$details',`image`=" . ($imagePath ? "'$imagePath'" : "NULL") .
-             " WHERE `id`=$id";
+            `details`='$details',`image`='$imagePath' WHERE `id`='$id'";
       $result = $connection->query($sql);
       if($result==true){
         header("Location:viewNews_ui.php");
